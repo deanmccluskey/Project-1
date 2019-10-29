@@ -1,5 +1,10 @@
 # Project-1
 UCD Project#1
+Group 1
+-Gabby
+-Thala
+-Dean
+-Joshua
 
 A brief description of First Project.
 More detail will come during the week:

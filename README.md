@@ -2,7 +2,7 @@
 
 Group 1:
 - Gabby
-- Thala
+- Talha
 - Dean
 - Joshua
 

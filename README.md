@@ -26,7 +26,7 @@ Build Something Awesome
 
 [ ] Must have some sort of repeating element (table, columns, etc)
 
-[ ] Must use Bootstrap or Alternative CSS Framework
+[X] Must use Bootstrap or Alternative CSS Framework
 
 [ ] Must be Deployed (GitHub Pages or Firebase)
 

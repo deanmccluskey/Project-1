@@ -6,7 +6,7 @@ $(document).ready(function() {
         event.preventDefault();
         query = $('#name').val();
         console.log("Query: ", query);
-        queryURL = "https://api.duckduckgo.com/?q=" + query + "&format=json&pretty=1";
+        queryURL = "https://api.duckduckgo.com/?q=" + query + "&format=json&pretty=1&t=famouspeoplefinder";
         console.log("Query submitted.");
         $.ajax({
             url: queryURL,

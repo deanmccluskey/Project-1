@@ -4,7 +4,7 @@ let queryURL = "";
 $(document).ready(function() {
     $('#submit').on("click", function() {
         event.preventDefault();
-        query = $('#name').val();
+        query = $('#email').val();
         console.log("Query: ", query);
         queryURL = "https://api.duckduckgo.com/?q=" + query + "&format=json&pretty=1";
         console.log("Query submitted.");

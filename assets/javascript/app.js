@@ -34,16 +34,26 @@ $(document).ready(function () {
         // console.log(post);
         for (let k in post){
           if (k == "Text"){
+            $('#results').append("<div id='box" + i + "' class='box'></div>");
             let phrase = post.FirstURL.split("m/");
             console.log("Phrase: ", phrase);
+            console.log("post[k]: ", post[k]);
             post[k] = post[k].slice(phrase[1].length);
-            $('#results').append("<p class='box'>" + post[k] + "</p>");
-            } else if (k == "Icon"){
-              $('#results').append("<img class='box' src='" + post[k].URL + "'>");
+            let final = post[k].split("g)");
+            console.log("Phrase Length: ", phrase[1].length);
+            if (final[1] != undefined){
+              $('#box' + i).append("<p class='description'>" + final[1] + "</p>");
+            } else {
+              $('#box' + i).append("<p class='description'>" + final[0] + "</p>");
+            }
+           
+            } 
+            else if (k == "Icon"){
+              console.log("Photo: ", post[k].URL);
+              $('#box' + i).append("<img class='photo' src='" + post[k].URL + "'>");
             }   
           }
         }
-        // console.log(post.split(">").join("> "));
           
     }).catch((err) => {
       console.warn(err);

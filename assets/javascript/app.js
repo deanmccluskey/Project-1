@@ -1,6 +1,12 @@
 let query = "";
 let queryURL = "";
 let text;
+var CSStransforms = anime({
+  targets: '#box .el',
+  translateX: 250,
+  scale: 2,
+  rotate: '1turn'
+});
 $(document).ready(function () {
   $('form').on("submit", function () {
     event.preventDefault();

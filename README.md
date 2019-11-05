@@ -24,13 +24,13 @@ Build Something Awesome
 
 [ ] Must NOT use alerts, confirms, or prompts (look into modals!)
 
-[X] Must have some sort of repeating element (table, columns, etc)
+[ ] Must have some sort of repeating element (table, columns, etc)
 
 [X] Must use Bootstrap or Alternative CSS Framework
 
 [ ] Must be Deployed (GitHub Pages or Firebase)
 
-[X] Must have User Input Validation
+[ ] Must have User Input Validation
 
 ### Presentation Date
 Two Weeks from 10/26

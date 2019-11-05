@@ -4,9 +4,6 @@ let text;
 
 $(document).ready(function () {
     $('form').on("submit", function () {
-=======
-$(document).ready(function() {
-    $('#submit').on("click", function() {
         event.preventDefault();
         query = $('#name').val();
 
@@ -27,6 +24,50 @@ $(document).ready(function() {
 
             // Debugging
             // console.log(text);
+            console.log(text.RelatedTopics);
+
+            // Call for Stiff Image (Use this if GIPHY doesn't work)
+            // $('#image').attr("src", text.RelatedTopics[0].Icon.URL);
+
+            $('#results').empty();
+            for (let i = 0; i < 3; i++) {
+                let post = text.RelatedTopics[i];
+                // console.log(post);
+                for (let k in post) {
+                    if (k == "Text") {
+                        $('#results').append("<div id='box" + i + "' class='box'></div>");
+                        let phrase = post.FirstURL.split("m/");
+                        console.log("Phrase: ", phrase);
+                        console.log("post[k]: ", post[k]);
+                        post[k] = post[k].slice(phrase[1].length);
+                        let final = post[k].split("g)");
+                        console.log("Phrase Length: ", phrase[1].length);
+                        if (final[1] != undefined) {
+                            $('#box' + i).append("<p class='description'>" + final[1] + "</p>");
+                        }
+                        else {
+                            $('#box' + i).append("<p class='description'>" + final[0] + "</p>");
+                        }
+
+                        console.log(post[k]);
+                        console.log(post[k].includes("..."));
+                        if (post[k].includes("...")) { 
+                            $(('#box' + i) + " .description").append("<a href=" + post.FirstURL + ">Read more</a>");
+                            console.log(post.FirstURL);
+                        }
+
+                    }
+                    else if (k == "Icon") {
+                        console.log("Photo: ", post[k].URL);
+                        $('#box' + i).append("<img class='photo' src='" + post[k].URL + "'>");
+                    }
+                }
+            }
+
+        }).catch((err) => {
+            console.warn(err);
+            $('#results').html("<p>It looks like the query didn't work. Did you try: </p><ul><li>Putting something in the search bar? (Don't leave it empty!)</li><li>Clearing your cache? (Duckduckgo is finicky sometimes.)</li></ul><p>If those don't work, try a different query. :)</p>")
+        });
             // console.log(text.RelatedTopics);
 
 
@@ -45,16 +86,3 @@ $(document).ready(function() {
                 rotate: '1turn',
                 duration: 10000,
               });
-=======
-            // goThroughResults(text.RelatedTopics);
-            // $('#results').text(text.RelatedTopics[0].Text);
-
-            for (let i = 0; i < text.RelatedTopics.length; i++){
-              if (typeof text.RelatedTopics[i].Text != undefined){
-                $('#results').append("<p>" + text.RelatedTopics[i].Text + "</p>");
-              }         
-            }
-          }).catch((err) => console.warn(err), $('#results').html("<p>It looks like the query didn't work. Did you try: </p><ul><li>Putting something in the search bar? (Don't leave it empty!)</li><li>Clearing your cache? (Duckduckgo is finicky sometimes.)</li></ul><p>If those don't work, try a different query. :)</p>"));
-    });
-});
-

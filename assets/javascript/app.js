@@ -1,6 +1,10 @@
 let query = "";
 let queryURL = "";
 let text;
+
+$(document).ready(function () {
+    $('form').on("submit", function () {
+=======
 $(document).ready(function() {
     $('#submit').on("click", function() {
         event.preventDefault();
@@ -25,6 +29,23 @@ $(document).ready(function() {
             // console.log(text);
             // console.log(text.RelatedTopics);
 
+
+        $.ajax({
+            url: gifURL,
+            method: "GET"
+        }).then(function (resp) {
+            // console.log(resp);
+            result = resp.data;
+            // console.log(result);
+            let counter = 0;
+            anime({
+                targets: '#image',
+                translateX: 0,
+                scale: 1,
+                rotate: '1turn',
+                duration: 10000,
+              });
+=======
             // goThroughResults(text.RelatedTopics);
             // $('#results').text(text.RelatedTopics[0].Text);
 

@@ -10,6 +10,12 @@ $(document).ready(function () {
     queryURL = "https://api.duckduckgo.com/?q=" + query + "&format=json&pretty=1";
     // Debugging
     // console.log("Query submitted.");
+    anime({
+      targets: '#image',
+      translateX: 0,
+      scale: 1,
+      duration: 5000,
+    });
     $.ajax({
       url: queryURL,
       method: "GET"
@@ -87,12 +93,12 @@ $(document).ready(function () {
             result = resp.data;
             // console.log(result);
             let counter = 0;
-            anime({
+           let snim1 = anime({
               targets: '#image',
               translateX: 0,
               scale: 1,
               rotate: '1turn',
-              duration: 10000,
+              duration: 5000,
             });
             while (result[counter].rating != "g") {
                 counter++;

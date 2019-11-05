@@ -1,0 +1,14 @@
+.box {
+    border-color: black;
+    border-style: solid;
+    border-radius: 6px;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+}
+
+.photo {
+    height: 20vh;
+    width: 20vw;
+    margin-bottom: 2vh;
+    border-radius: 2px;
+}

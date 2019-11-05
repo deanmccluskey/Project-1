@@ -28,27 +28,55 @@ $(document).ready(function () {
       // Call for Stiff Image (Use this if GIPHY doesn't work)
       // $('#image').attr("src", text.RelatedTopics[0].Icon.URL);
 
+      // Empty the results so that we can append new ones from the new search.
       $('#results').empty();
+
+      // Let's return only 3 results.
       for (let i = 0; i < 3; i++) {
+
+        // Post will be an object containing different search results.
         let post = text.RelatedTopics[i];
+
+        // Debugging
         // console.log(post);
+
+        // k cycles through the post object to check for specific properties
         for (let k in post){
+
+          // we want to append the text to the newly made box
           if (k == "Text"){
             $('#results').append("<div id='box" + i + "' class='box'></div>");
+
+            // we want to get rid of the text in front of each paragraph so it looks cleaner
             let phrase = post.FirstURL.split("m/");
+
+            // Debugging
             console.log("Phrase: ", phrase);
             console.log("post[k]: ", post[k]);
+
+            // this gets rid of the text in front of the paragraph
             post[k] = post[k].slice(phrase[1].length);
+
+            // this makes sure that no more added text is shown in front of the paragraph
             let final = post[k].split("g)");
+
+            // Debugging
             console.log("Phrase Length: ", phrase[1].length);
+
+            // this is for the case that we didn't need to do a split in the first place
             if (final[1] != undefined){
               $('#box' + i).append("<p class='description'>" + final[1] + "</p>");
-            } else {
+            } 
+            // this is if the split was successful
+            else {
               $('#box' + i).append("<p class='description'>" + final[0] + "</p>");
             }
            
             } 
+            // we grab the picture too if there is one
             else if (k == "Icon"){
+
+              // Debugging
               console.log("Photo: ", post[k].URL);
               $('#box' + i).append("<img class='photo' src='" + post[k].URL + "'>");
             }   

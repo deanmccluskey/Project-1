@@ -1,12 +1,7 @@
 let query = "";
 let queryURL = "";
 let text;
-// const CSStransforms = anime({
-//   targets: '#box .el',
-//   translateX: 250,
-//   scale: 2,
-//   rotate: '1turn'
-// });
+
 $(document).ready(function () {
     $('form').on("submit", function () {
         event.preventDefault();
@@ -19,12 +14,12 @@ $(document).ready(function () {
 
         // Debugging
         // console.log("Query submitted.");
-
-        $.ajax({
+    
+          $.ajax({
             url: queryURL,
             method: "GET"
-        }).then(function (response) {
-            // console.log(response);
+          }).then(function(response) {
+            console.log(response);
             text = JSON.parse(response);
 
             // Debugging
@@ -73,8 +68,8 @@ $(document).ready(function () {
             console.warn(err);
             $('#results').html("<p>It looks like the query didn't work. Did you try: </p><ul><li>Putting something in the search bar? (Don't leave it empty!)</li><li>Clearing your cache? (Duckduckgo is finicky sometimes.)</li></ul><p>If those don't work, try a different query. :)</p>")
         });
+            // console.log(text.RelatedTopics);
 
-        let gifURL = "https://api.giphy.com/v1/gifs/search?q=" + query + "&api_key=9r7NcqflJmMVXoySzh8zg8XfGjFliOaS";
 
         $.ajax({
             url: gifURL,
@@ -84,18 +79,10 @@ $(document).ready(function () {
             result = resp.data;
             // console.log(result);
             let counter = 0;
-
-            while (result[counter].rating != "g") {
-                counter++;
-            }
-
-            $('#image').attr("src", result[counter].images.fixed_height.url);
-
-
-
-        }).catch((err) => { console.warn(err); $('#image').html("<p>GIF Not Shown</p>") });
-
-
-    });
-});
-
+            anime({
+                targets: '#image',
+                translateX: 0,
+                scale: 1,
+                rotate: '1turn',
+                duration: 10000,
+              });

@@ -1,12 +1,7 @@
 let query = "";
 let queryURL = "";
 let text;
-// const CSStransforms = anime({
-//   targets: '#box .el',
-//   translateX: 250,
-//   scale: 2,
-//   rotate: '1turn'
-// });
+
 $(document).ready(function () {
   $('form').on("submit", function () {
     event.preventDefault();
@@ -77,7 +72,12 @@ $(document).ready(function () {
             else {
               $('#box' + i).append("<p class='description'>" + final[0] + "</p>");
             }
-           
+            console.log(post[k]);
+            console.log(post[k].includes("..."));
+            if (post[k].includes("...")) {
+                $(('#box' + i) + " .description").append("<a href=" + post.FirstURL + ">Read more</a>");
+                console.log(post.FirstURL);
+            }
             } 
             // we grab the picture too if there is one
             else if (k == "Icon"){
@@ -110,6 +110,13 @@ $(document).ready(function () {
             result = resp.data;
             // console.log(result);
             let counter = 0;
+            anime({
+              targets: '#image',
+              translateX: 0,
+              scale: 1,
+              rotate: '1turn',
+              duration: 10000,
+            });
 
             while (result[counter].rating != "g") {
                 counter++;

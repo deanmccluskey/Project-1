@@ -1,12 +1,7 @@
 let query = "";
 let queryURL = "";
 let text;
-// const CSStransforms = anime({
-//   targets: '#box .el',
-//   translateX: 250,
-//   scale: 2,
-//   rotate: '1turn'
-// });
+
 $(document).ready(function () {
     $('form').on("submit", function () {
         event.preventDefault();
@@ -76,6 +71,13 @@ $(document).ready(function () {
             result = resp.data;
             // console.log(result);
             let counter = 0;
+            anime({
+                targets: '#image',
+                translateX: 0,
+                scale: 1,
+                rotate: '1turn',
+                duration: 10000,
+              });
 
             while (result[counter].rating != "g") {
                 counter++;

@@ -49,8 +49,16 @@ $(document).ready(function () {
                         console.log("Phrase Length: ", phrase[1].length);
                         if (final[1] != undefined) {
                             $('#box' + i).append("<p class='description'>" + final[1] + "</p>");
-                        } else {
+                        }
+                        else {
                             $('#box' + i).append("<p class='description'>" + final[0] + "</p>");
+                        }
+
+                        console.log(post[k]);
+                        console.log(post[k].includes("..."));
+                        if (post[k].includes("...")) { 
+                            $(('#box' + i) + " .description").append("<a href=" + post.FirstURL + ">Read more</a>");
+                            console.log(post.FirstURL);
                         }
 
                     }

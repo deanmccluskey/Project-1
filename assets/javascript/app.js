@@ -80,9 +80,23 @@ $(document).ready(function () {
             // console.log(result);
             let counter = 0;
             anime({
-                targets: '#image',
-                translateX: 0,
-                scale: 1,
-                rotate: '1turn',
-                duration: 10000,
-              });
+              targets: '#image',
+              translateX: 0,
+              scale: 1,
+              rotate: '1turn',
+              duration: 10000,
+            });
+
+            while (result[counter].rating != "g") {
+                counter++;
+            }
+
+            $('#image').attr("src", result[counter].images.fixed_height.url);
+
+
+
+        }).catch((err) => { console.warn(err); $('#image').html("<p>GIF Not Shown</p>") });
+
+
+    });
+});

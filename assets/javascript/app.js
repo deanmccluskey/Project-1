@@ -78,7 +78,12 @@ $(document).ready(function () {
 
               // Debugging
               console.log("Photo: ", post[k].URL);
-              $('#box' + i).append("<img class='photo' src='" + post[k].URL + "'>");
+              if (post[k].URL.length > 0){
+                $('#box' + i).append("<img class='photo' src='" + post[k].URL + "'>");
+              }
+             else {
+              $('#box' + i).append("<img class='photo' src='assets/images/missingpic.png'>");
+             }
             }   
           }
         }

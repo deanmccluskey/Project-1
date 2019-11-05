@@ -1,6 +1,12 @@
 let query = "";
 let queryURL = "";
 let text;
+// const CSStransforms = anime({
+//   targets: '#box .el',
+//   translateX: 250,
+//   scale: 2,
+//   rotate: '1turn'
+// });
 $(document).ready(function () {
   $('form').on("submit", function () {
     event.preventDefault();
@@ -88,28 +94,29 @@ $(document).ready(function () {
       $('#results').html("<p>It looks like the query didn't work. Did you try: </p><ul><li>Putting something in the search bar? (Don't leave it empty!)</li><li>Clearing your cache? (Duckduckgo is finicky sometimes.)</li></ul><p>If those don't work, try a different query. :)</p>")
     });
 
-    let gifURL = "https://api.giphy.com/v1/gifs/search?q=" + query + "&api_key=9r7NcqflJmMVXoySzh8zg8XfGjFliOaS";
 
-    $.ajax({
-      url: gifURL,
-      method: "GET"
-    }).then(function (resp) {
-      // console.log(resp);
-      result = resp.data;
-      // console.log(result);
-      let counter = 0;
+        let gifURL = "https://api.giphy.com/v1/gifs/search?q=" + query + "&api_key=9r7NcqflJmMVXoySzh8zg8XfGjFliOaS";
 
-      while (result[counter].rating != "g") {
-        counter++;
-      }
+        $.ajax({
+            url: gifURL,
+            method: "GET"
+        }).then(function (resp) {
+            // console.log(resp);
+            result = resp.data;
+            // console.log(result);
+            let counter = 0;
 
-      $('#image').attr("src", result[counter].images.fixed_height.url);
+            while (result[counter].rating != "g") {
+                counter++;
+            }
 
-
-
-    }).catch((err) => { console.warn(err); $('#image').html("<p>GIF Not Shown</p>") });
+            $('#image').attr("src", result[counter].images.fixed_height.url);
 
 
-  });
+
+        }).catch((err) => { console.warn(err); $('#image').html("<p>GIF Not Shown</p>") });
+
+
+    });
 });
 

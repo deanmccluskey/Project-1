@@ -1,36 +1,14 @@
-# Project One
 
-Group 1:
-- Gabby
-- Talha
-- Dean
-- Joshua
+FriendlySearch
 
-## A brief description of First Project. More detail will come during the week:
+Authored by Gabby Quattrone, Talha Muzaffar, Joshua Brown and Dean McCluskey
 
-### Project Goal:
-Build Something Awesome
+Friendly Search is fun search engine that accesses DuckDuckGo's API to render results in a user friendly GUI. 
 
-### Requirements:
-[X] Must uses at least two APIs
+Results posted include a primary image, an antimated GIF obtained from Giphy's API, which spins (using
+anime.js) before it lands on the page.
 
-[X] Must use AJAX to pull data
+Results also include a short description, a picture, and may offer a URL for additional information. 
 
-[X] Must utilize at least one new library or technology that we haven’t discussed
+All of this is designed to make for a fun and interesting option for internet searches...
 
-[ ] Must have a polished frontend / UI
-
-[ ] Must meet good quality coding standards (indentation, scoping, naming)
-
-[X] Must NOT use alerts, confirms, or prompts (look into modals!)
-
-[X] Must have some sort of repeating element (table, columns, etc)
-
-[X] Must use Bootstrap or Alternative CSS Framework
-
-[ ] Must be Deployed (GitHub Pages or Firebase)
-
-[X] Must have User Input Validation
-
-### Presentation Date
-Two Weeks from 10/26

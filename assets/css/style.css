@@ -5,6 +5,7 @@
 }
 .friendly-font {
     font-family: 'McLaren', cursive;
+    text-shadow: 2px 2px 5px white;
 }
 .photo {
     height: 200px;
@@ -16,6 +17,22 @@
 .form-control {
     display: inline;
 }
+body, html {
+    height: 100%;
+}
+
+.bg {
+    background-image: linear-gradient(#1FDED8,white);
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
 #image {
     margin-bottom: 50px;
 }

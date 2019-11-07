@@ -18,9 +18,9 @@ Build Something Awesome
 
 [X] Must utilize at least one new library or technology that we haven’t discussed
 
-[ ] Must have a polished frontend / UI
+[X] Must have a polished frontend / UI
 
-[ ] Must meet good quality coding standards (indentation, scoping, naming)
+[X] Must meet good quality coding standards (indentation, scoping, naming)
 
 [X] Must NOT use alerts, confirms, or prompts (look into modals!)
 
@@ -28,7 +28,7 @@ Build Something Awesome
 
 [X] Must use Bootstrap or Alternative CSS Framework
 
-[ ] Must be Deployed (GitHub Pages or Firebase)
+[X] Must be Deployed (GitHub Pages or Firebase)
 
 [X] Must have User Input Validation
 

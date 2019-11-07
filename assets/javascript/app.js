@@ -41,7 +41,7 @@ $(document).ready(function () {
                     if(post.FirstURL.includes("/c/")){
                         return;
                     }
-                    $('#results').append("<div id='box" + i + "' class='box'></div>");
+                    $('#results').append("<div class='card'><div id='box" + i + "' class='card-body'></div></div>");
                     for (let k in post) {
                         // we want to append the text to the newly made box
 

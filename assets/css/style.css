@@ -1,6 +1,4 @@
-.box {
-    border-color: black;
-    border-style: solid;
+.card {
     border-radius: 6px;
     margin-bottom: 2vh;
     margin-top: 2vh;

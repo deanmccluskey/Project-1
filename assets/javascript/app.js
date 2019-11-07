@@ -40,7 +40,7 @@ $(document).ready(function () {
                 for (let k in post) {
                     // we want to append the text to the newly made box
                     if (k == "Text") {
-                        $('#results').append("<div id='box" + i + "' class='box'></div>");
+                        $('#results').append("<div class='card'><div id='box" + i + "' class='card-body'></div></div>");
                         // we want to get rid of the text in front of each paragraph so it looks cleaner
                         let phrase = post.FirstURL.split("m/");
                         // Debugging
